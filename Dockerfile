@@ -27,6 +27,9 @@ RUN set -x \
 # 映射/data/db数据卷
 RUN mkdir -p /data/db && chown -R mongodb:mongodb /data/db
 VOLUME ["/data/db"]
+# 复制运行脚本
+COPY start.sh /start.sh
+RUN chmod +x /*.sh
 # 暴露mongodb默认启动端口
 EXPOSE 27017
 # 配置supervisord
