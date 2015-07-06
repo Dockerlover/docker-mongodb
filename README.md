@@ -21,3 +21,30 @@ Docker化Mongodb
 - 进入容器
 
         docker exec -it mongodb /bin/bash
+
+## mongo数据库管理
+
+- 设置用户
+        
+        mongo
+        use admin
+        db.createUser({user: "mongo",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]})
+        db.auth("mongo","123456")
+
+- 管理员登入
+
+        mongo admin -u mongo -p 123456
+
+- 给特定数据库设定用户
+
+        use users
+        db.createUser(
+         {
+           user: "user_manager",
+           pwd: "manager_pwd",
+           roles: [
+              { role: "readWrite", db: "users" },
+              { role: "read", db: "users1" }
+           ]
+         }
+        )
