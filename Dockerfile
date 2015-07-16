@@ -5,8 +5,8 @@ MAINTAINER  liuhong1.happy@163.com
 # 添加环境变量
 ENV USER_NAME admin
 ENV SERVICE_ID mongodb
-ENV MONGO_MAJOR 3.1
-ENV MONGO_VERSION 3.1.5
+ENV MONGO_MAJOR 2.6
+ENV MONGO_VERSION 2.6.10
 # 安装mongodb
 RUN groupadd -r mongodb && useradd -r -g mongodb mongodb
 RUN apt-get update && apt-get install -y --no-install-recommends 	numactl && rm -rf /var/lib/apt/lists/*
