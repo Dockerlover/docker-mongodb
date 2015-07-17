@@ -16,4 +16,4 @@ if [ "$1" = 'mongod' ]; then
 	exec gosu mongodb "$@"
 fi
 
-exec "$@"
+exec "$@" --dbpath /data/db
